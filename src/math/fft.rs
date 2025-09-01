@@ -106,7 +106,7 @@ impl FFT for i64 {
     }
 
     fn extract(f: Self::F) -> Self {
-        f.val
+        if f.val > COMMON_PRIME / 2 { f.val - COMMON_PRIME } else { f.val }
     }
 }
 
